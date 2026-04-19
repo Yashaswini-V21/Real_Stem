@@ -1,7 +1,8 @@
 {
   "name": "real-stem",
-  "version": "0.1.0",
+  "version": "9.9.0",
   "private": true,
+  "description": "AI-powered news-to-lesson STEM education platform",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
