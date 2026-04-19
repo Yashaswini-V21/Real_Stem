@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RealSTEM — Sign In</title>
+  <meta name="description" content="Log in or create your RealSTEM account to start generating AI-powered STEM lessons." />
+  <meta name="theme-color" content="#06090f" />
+  <link rel="icon" type="image/png" href="/assets/logo.png" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <div class="auth-page">
+    <!-- Background Ambience -->
+    <div class="bg-grid"></div>
+    <div class="ambient-orb" style="width:400px;height:400px;background:rgba(59,130,246,0.12);top:10%;left:-5%;"></div>
+    <div class="ambient-orb" style="width:350px;height:350px;background:rgba(139,92,246,0.1);bottom:10%;right:-5%;"></div>
+
+    <!-- Back Link -->
+    <a href="/" class="auth-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Back to Home
+    </a>
+
+    <!-- Auth Card -->
+    <div class="auth-card glass-strong" id="authCard">
+      <div class="auth-header">
+        <div class="auth-logo">
+          <img src="/assets/logo.png" alt="RealSTEM" />
+        </div>
+        <h2 id="authTitle">Access Portal</h2>
+        <p id="authSubtitle">Welcome back. Log in to your RealSTEM dashboard.</p>
+      </div>
+
+      <form class="auth-form" id="authForm" novalidate>
+        <!-- Name row (register only) -->
+        <div class="auth-name-row" id="nameRow">
+          <div class="form-group">
+            <label class="form-label" for="fullName">Full Name</label>
+            <input class="form-input" type="text" id="fullName" placeholder="Ada Lovelace" autocomplete="name" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address</label>
+          <input class="form-input" type="email" id="email" placeholder="ada@school.edu" autocomplete="email" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <input class="form-input" type="password" id="password" placeholder="••••••••" autocomplete="current-password" required />
+        </div>
+
+        <button type="submit" class="auth-submit" id="authSubmit">Authenticate</button>
+      </form>
+
+      <div class="auth-footer">
+        <span id="authPrompt">Don't have an account?</span>
+        <button class="auth-toggle" id="authToggle">Sign Up</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/auth.js"></script>
+</body>
+</html>
