@@ -1,0 +1,9 @@
+Generate assessment questions for STEM topics. Include:
+- Multiple choice questions
+- Short answer questions
+- Problem-solving questions
+- Practical application questions
+
+Topic: {topic}
+Difficulty: {difficulty}
+Number of Questions: {num_questions}

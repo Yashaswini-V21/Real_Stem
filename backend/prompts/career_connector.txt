@@ -1,0 +1,8 @@
+Connect STEM concepts to career opportunities. For each concept provide:
+- Relevant careers
+- Required skills
+- Potential salary ranges
+- Educational pathways
+- Industry trends
+
+Topic: {topic}

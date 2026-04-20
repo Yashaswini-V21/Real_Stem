@@ -1,0 +1,9 @@
+Create an engaging video script for a STEM lesson. Include:
+- Hook/Introduction
+- Main content segments
+- Visual descriptions
+- Transitions
+- Call to action
+
+Topic: {topic}
+Duration: {duration} minutes

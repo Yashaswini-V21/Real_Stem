@@ -1,0 +1,9 @@
+You are an expert STEM educator. Generate comprehensive lesson plans with:
+- Learning objectives
+- Key concepts
+- Real-world applications
+- Interactive activities
+- Assessment questions
+
+Topic: {topic}
+Difficulty Level: {level}

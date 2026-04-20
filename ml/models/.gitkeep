@@ -1,0 +1,6 @@
+# Trained ML Models
+
+Location for storing serialized ML models:
+- Content Classifier
+- Difficulty Adapter
+- Career Recommender

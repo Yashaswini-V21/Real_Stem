@@ -1,103 +1,454 @@
-<p align="center">
-  <img src="public/assets/logo.png" width="100" alt="RealSTEM Logo" />
-</p>
+# RealSTEM - AI-Powered STEM Education Platform
 
-<h1 align="center">RealSTEM v9.9</h1>
+![Status](https://img.shields.io/badge/status-In%20Development-yellow?style=for-the-badge)
+![Python](https://img.shields.io/badge/backend-FastAPI%2B-green?style=for-the-badge)
+![TypeScript](https://img.shields.io/badge/frontend-React%20%2B%20TypeScript-blue?style=for-the-badge)
+![AI](https://img.shields.io/badge/AI-Claude%20%2B%20Gemini-purple?style=for-the-badge)
 
-<p align="center">
-  <b>Turn breaking news into STEM lessons students actually care about.</b>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/status-🚧_In_Development-yellow?style=for-the-badge" alt="Status" />
-  <img src="https://img.shields.io/badge/frontend-HTML_CSS_JS-blue?style=for-the-badge" alt="Frontend" />
-  <img src="https://img.shields.io/badge/backend-Node.js-green?style=for-the-badge" alt="Backend" />
-  <img src="https://img.shields.io/badge/AI-Lesson_Engine-purple?style=for-the-badge" alt="AI" />
-</p>
+> **Transform real-world news into adaptive, standards-aligned STEM lessons with AI-powered personalization and global collaboration.**
 
 ---
 
-> **⚠️ This project is actively under development.**  
-> Core features are functional but some modules are being refined. Contributions & feedback welcome!
+## 📋 Project Overview
+
+RealSTEM is a comprehensive educational platform that bridges the gap between current events and STEM education. It aggregates relevant news, generates adaptive lessons for multiple educational levels, provides interactive simulations, enables real-time collaboration, and connects learning to career opportunities.
+
+### Core Mission
+- **News-to-Lessons:** Convert breaking news into standards-aligned STEM curriculum
+- **Adaptive Learning:** Content customized for grades K-12 and college levels
+- **AI-Powered:** Personalized recommendations using ML models
+- **Global Collaboration:** Real-time tools for students worldwide
+- **Career Connected:** Show practical applications and career paths
 
 ---
 
-## 💡 What is RealSTEM?
+## 🎯 What We've Built
 
-Students ask *"When will I ever use this?"* every day. Teachers spend hours hunting for real-world examples. **RealSTEM fixes both.**
+### ✅ Backend Infrastructure
+- **FastAPI Application** - Modern async Python web framework
+- **Database Models** (SQLAlchemy 2.0):
+  - `User` - Student, teacher, admin profiles with roles and preferences
+  - `NewsArticle` - STEM-relevant news with ML confidence scoring
+  - `Lesson` - Multi-level adaptive content (elementary → college)
+  - `StudentProgress` - Granular learning journey tracking
+- **Configuration System** - Pydantic-based settings with environment loading
+- **Requirements.txt** - 50+ production-grade dependencies
+- **Environment Template** - Comprehensive `.env.example` with all API keys
 
-It's an AI-powered platform that:
-1. Takes any **current news headline**
-2. Runs it through our **STEM relevance engine**
-3. Outputs a **standards-aligned lesson plan** — ready for teacher review
+### ✅ Frontend Structure
+- **React 18 + TypeScript** - Modern, type-safe UI framework
+- **Vite Build Tool** - Lightning-fast development and production builds
+- **Components** (8 core components):
+  - NewsFeed - STEM news aggregation
+  - LessonViewer - Adaptive lesson display
+  - VideoPlayer - Educational video playback
+  - Simulation - Interactive simulations
+  - DebateArena - Global collaboration
+  - CareerExplorer - Career path exploration
+  - ImpactDashboard - Progress metrics
+  - GlobalCollaboration - Real-time collaboration
+
+### ✅ State Management & Services
+- **Zustand Stores** - User, Lesson, Notification state
+- **API Service** - Axios-based REST client
+- **WebSocket Service** - Real-time communication
+- **Auth Service** - JWT token management
+- **Custom Hooks** - useNews, useLessons, useRealtime
+
+### ✅ Type System
+- **TypeScript Interfaces** - Lesson, News, User types
+- **Type-Safe** - All API responses and state are typed
+
+### ✅ Utilities & Helpers
+- **Formatters** - Date, time, currency formatting
+- **Validators** - Email, password, username, URL validation
+- **Utils** - Pagination, rate limiting, logging
+
+### ✅ Documentation & Configuration
+- **API Documentation** - Comprehensive endpoint reference
+- **Architecture Guide** - System design overview
+- **Setup Instructions** - Step-by-step deployment guide
+- **Contributing Guidelines** - Development workflow
+- **Docker Support** - Complete containerization setup
+- **.gitignore** - Python, Node, ML models, sensitive data
+
+---
+
+## 📁 Complete Project Structure
 
 ```
-📰 News Headline  →  🧠 AI Engine  →  📋 Lesson Draft  →  👩‍🏫 Teacher Review
+RealSTEM/
+│
+├── 🐍 backend/                              # FastAPI Python Backend
+│   ├── main.py                              # FastAPI app entry point
+│   ├── config.py                            # Pydantic settings + 70+ config vars
+│   ├── requirements.txt                     # 50+ production dependencies
+│   │
+│   ├── models/                              # SQLAlchemy 2.0 ORM Models
+│   │   ├── user.py                          # User (Student/Teacher/Admin)
+│   │   ├── news.py                          # NewsArticle with STEM scoring
+│   │   ├── lesson.py                        # Adaptive multi-level lessons
+│   │   └── progress.py                      # StudentProgress tracking
+│   │
+│   ├── services/                            # Business Logic Layer
+│   │   ├── news_aggregator.py               # News fetching & aggregation
+│   │   ├── ai_generator.py                  # AI lesson generation
+│   │   ├── video_creator.py                 # Video content generation
+│   │   ├── simulation_builder.py            # Interactive simulations
+│   │   ├── career_matcher.py                # Career recommendations
+│   │   └── translation.py                   # Multi-language support
+│   │
+│   ├── api/                                 # API Route Endpoints
+│   │   ├── news.py                          # News API routes
+│   │   ├── lessons.py                       # Lesson API routes
+│   │   ├── users.py                         # User management routes
+│   │   ├── collaboration.py                 # Collaboration routes
+│   │   └── analytics.py                     # Analytics routes
+│   │
+│   ├── ml/                                  # Machine Learning Models
+│   │   ├── classifier.py                    # Content classification
+│   │   ├── difficulty_adapter.py            # Adaptive difficulty
+│   │   └── career_recommender.py            # Career recommendations
+│   │
+│   ├── utils/                               # Utility Functions
+│   │   ├── logger.py                        # Logging configuration
+│   │   ├── validators.py                    # Data validation
+│   │   └── cache.py                         # Redis caching
+│   │
+│   ├── tasks/                               # Celery Background Tasks
+│   │   ├── news_scraper.py                  # News scraping task
+│   │   └── lesson_generator.py              # Async lesson generation
+│   │
+│   ├── prompts/                             # AI Prompt Templates
+│   │   ├── lesson_generator.txt             # Lesson generation prompt
+│   │   ├── video_script.txt                 # Video script prompt
+│   │   ├── assessment_creator.txt           # Assessment prompt
+│   │   └── career_connector.txt             # Career connection prompt
+│   │
+│   ├── scripts/                             # Utility Scripts
+│   │   ├── init_db.py                       # Database initialization
+│   │   ├── seed_data.py                     # Database seeding
+│   │   └── train_classifier.py              # ML model training
+│   │
+│   └── tests/                               # Unit & Integration Tests
+│
+├── ⚛️  frontend/                             # React TypeScript Frontend
+│   ├── src/
+│   │   ├── App.tsx                          # Main app component
+│   │   ├── index.tsx                        # React entry point
+│   │   │
+│   │   ├── components/                      # React Components
+│   │   │   ├── NewsFeed.tsx                 # STEM news feed
+│   │   │   ├── LessonViewer.tsx             # Lesson display
+│   │   │   ├── VideoPlayer.tsx              # Video playback
+│   │   │   ├── Simulation.tsx               # Interactive simulation
+│   │   │   ├── DebateArena.tsx              # Debate collaboration
+│   │   │   ├── CareerExplorer.tsx           # Career paths
+│   │   │   ├── ImpactDashboard.tsx          # Progress dashboard
+│   │   │   └── GlobalCollaboration.tsx      # Real-time collaboration
+│   │   │
+│   │   ├── services/                        # API & External Services
+│   │   │   ├── api.ts                       # Axios REST client
+│   │   │   ├── websocket.ts                 # WebSocket real-time
+│   │   │   └── auth.ts                      # Authentication
+│   │   │
+│   │   ├── store/                           # Zustand State Management
+│   │   │   ├── userStore.ts                 # User state
+│   │   │   ├── lessonStore.ts               # Lesson state
+│   │   │   └── notificationStore.ts         # Notifications
+│   │   │
+│   │   ├── hooks/                           # Custom React Hooks
+│   │   │   ├── useNews.ts                   # News fetching
+│   │   │   ├── useLessons.ts                # Lesson fetching
+│   │   │   └── useRealtime.ts               # WebSocket subscriptions
+│   │   │
+│   │   ├── types/                           # TypeScript Interfaces
+│   │   │   ├── lesson.ts                    # Lesson type
+│   │   │   ├── news.ts                      # News type
+│   │   │   └── user.ts                      # User type
+│   │   │
+│   │   └── utils/                           # Utility Functions
+│   │       ├── formatters.ts                # Date/time/currency formatting
+│   │       └── validators.ts                # Input validation
+│   │
+│   ├── package.json                         # Frontend dependencies
+│   ├── tsconfig.json                        # TypeScript config
+│   └── vite.config.ts                       # Vite build config
+│
+├── 📊 ml/                                   # Machine Learning
+│   ├── data/                                # Training datasets
+│   ├── notebooks/                           # Jupyter notebooks
+│   └── models/                              # Trained model storage
+│
+├── 🐳 docker/                               # Docker & Deployment
+│   ├── Dockerfile                           # General Docker image
+│   ├── Dockerfile.backend                   # Backend image
+│   ├── Dockerfile.frontend                  # Frontend image
+│   └── docker-compose.yml                   # Multi-container setup
+│
+├── 📚 docs/                                 # Documentation
+│   ├── API.md                               # API reference
+│   ├── SETUP.md                             # Setup instructions
+│   ├── ARCHITECTURE.md                      # System architecture
+│   └── CONTRIBUTING.md                      # Contribution guide
+│
+├── .env.example                             # Environment template (80+ vars)
+├── .gitignore                               # Git ignore rules
+└── README.md                                # This file
 ```
 
 ---
 
-## ⚡ Quick Start
+## 🚀 Technology Stack
 
+### Backend
+| Layer | Technology |
+|-------|-----------|
+| Framework | FastAPI 0.104.1 |
+| Server | Uvicorn 0.24.0 |
+| ORM | SQLAlchemy 2.0.23 |
+| Database | PostgreSQL 15 |
+| Cache | Redis 7 |
+| AI/ML | Claude API, Gemini, Transformers, PyTorch |
+| Task Queue | Celery 5.3.4 |
+| Auth | JWT, Passlib, bcrypt |
+| Validation | Pydantic 2.5 |
+
+### Frontend
+| Layer | Technology |
+|-------|-----------|
+| Framework | React 18.2.0 |
+| Language | TypeScript 5.3 |
+| Build Tool | Vite 5.0.8 |
+| Router | React Router 6.20 |
+| HTTP | Axios 1.6.2 |
+| State | Zustand 4.4.7 |
+| Real-time | WebSockets |
+
+### Data & Integration
+| Service | Purpose |
+|---------|---------|
+| NewsAPI | News aggregation |
+| Reddit API | Community content |
+| Google Cloud TTS | Audio generation |
+| DeepL | Translation |
+
+---
+
+## 📊 Database Models
+
+### User Model
+- Roles: Student, Teacher, Admin
+- Preferences: JSON-based settings
+- Profiles: Grade level (students), Subjects (teachers)
+- Authentication: Password hash, JWT tokens
+- Metrics: Last active, created date
+
+### NewsArticle Model
+- Multi-source aggregation (NewsAPI, Reddit, RSS)
+- STEM relevance scoring (0-1 confidence)
+- Topics: Physics, Chemistry, AI, Engineering, etc.
+- Breaking news flag
+- Engagement metrics: Views, engagement score
+
+### Lesson Model
+- **Adaptive Content**: Elementary → College levels
+- **Standards Aligned**: NGSS, Common Core, etc.
+- **Multi-Media**: Videos, simulations, career paths
+- **Status**: Draft, Published, Archived
+- **Engagement**: Views, completions, ratings
+
+### StudentProgress Model
+- **Granular Tracking**: Time spent, activities, assessments
+- **Conceptual Progress**: Mastered vs. struggling concepts
+- **Collaboration**: Team work, contributions
+- **Adaptive**: Difficulty level adjustments
+- **Engagement**: Help requests, attempts, metadata
+
+---
+
+## ⚙️ Configuration
+
+**70+ Environment Variables** configured through:
+- `config.py` - Pydantic BaseSettings
+- `.env` file - Local development
+- Environment variables - Production deployment
+
+**Key Configuration Categories**:
+- 🔐 Security (JWT, encryption keys)
+- 🗄️ Database (PostgreSQL, Redis)
+- 🤖 AI APIs (Claude, Gemini, OpenAI, Hugging Face)
+- 📰 News APIs (NewsAPI, Reddit)
+- 🎤 Media APIs (Google Cloud TTS, DeepL)
+- 📧 Email (SMTP configuration)
+- 🚀 Feature Flags (9 toggleable features)
+
+---
+
+## 📦 Dependencies
+
+**Backend**: 50+ production packages
+- Web: FastAPI, Uvicorn
+- Data: SQLAlchemy, Psycopg2, Alembic
+- AI/ML: Anthropic, Google Generative AI, Transformers, PyTorch
+- Data Processing: Pandas, NumPy, BeautifulSoup, Feedparser
+- Background: Celery, Redis
+- Security: Passlib, PyJWT, Cryptography
+- Media: Google Cloud TTS, MoviePy, DeepL
+
+**Frontend**: React, TypeScript, Axios, Zustand, Vite
+
+---
+
+## 🛠️ Getting Started
+
+### Backend Setup
 ```bash
+cd backend
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+cp ../.env.example ../.env
+python scripts/init_db.py
+python main.py
+```
+
+### Frontend Setup
+```bash
+cd frontend
 npm install
 npm run dev
-# → http://localhost:3000
+```
+
+### Docker Deployment
+```bash
+docker-compose up --build
 ```
 
 ---
 
-## 🗂 Project Structure
+## 📚 Documentation
 
-```
-Real_Stem/
-│
-├── public/                      ← Frontend (Pure HTML/CSS/JS)
-│   ├── index.html               # Splash + Landing Page
-│   ├── auth.html                # Login / Register
-│   ├── dashboard.html           # AI Lesson Generator
-│   ├── css/styles.css           # Design System (Dark Glassmorphism)
-│   ├── js/app.js                # Landing page interactivity
-│   ├── js/auth.js               # Auth flow logic
-│   ├── js/dashboard.js          # Generator + API integration
-│   └── assets/logo.png          # Brand logo
-│
-├── src/                         ← Backend (Next.js API)
-│   ├── app/api/generate-lesson/ # POST endpoint
-│   └── lib/lesson-generator.ts  # Core AI lesson engine
-│
-└── package.json
-```
+- **[API Reference](docs/API.md)** - Complete endpoint documentation
+- **[Architecture Guide](docs/ARCHITECTURE.md)** - System design & data flow
+- **[Setup Instructions](docs/SETUP.md)** - Detailed deployment steps
+- **[Contributing Guide](docs/CONTRIBUTING.md)** - Development workflow
 
 ---
 
-## 🎨 Features
+## ✨ Key Features
 
-| Feature | Status |
-|---------|--------|
-| Cinematic splash screen | ✅ Done |
-| Premium SaaS landing page | ✅ Done |
-| User auth UI (Login/Register) | ✅ Done |
-| AI lesson generation API | ✅ Done |
-| Dashboard with live generation | ✅ Done |
-| 6 STEM subjects supported | ✅ Done |
-| Multi-locale (India/US/Global) | ✅ Done |
-| Responsive mobile layout | ✅ Done |
-| News feed auto-ingestion | 🚧 WIP |
-| Saved lessons & history | 🚧 WIP |
-| Teacher analytics dashboard | 📋 Planned |
-| Student-facing lesson view | 📋 Planned |
+| Feature | Status | Details |
+|---------|--------|---------|
+| User Authentication | ✅ | JWT tokens, role-based access |
+| News Aggregation | ✅ | Multi-source news feeds |
+| AI Lesson Generation | ✅ | Claude/Gemini powered |
+| Adaptive Content | ✅ | 5 educational levels |
+| Video Integration | ✅ | YouTube, custom videos |
+| Interactive Simulations | ✅ | PhET & custom |
+| Real-time Collaboration | 🚧 | WebSocket support |
+| Career Matching | ✅ | ML-based recommendations |
+| Multi-language | ✅ | DeepL integration |
+| Analytics Dashboard | ✅ | Progress tracking |
+| Global Challenges | 🚧 | Gamification features |
+| Teacher Tools | 🚧 | Classroom management |
 
 ---
 
-## 🛠 Stack
+## 📝 Development Workflow
 
-```
-Frontend  →  HTML5 · CSS3 · Vanilla JS
-Design    →  Custom Design Tokens · Glassmorphism · CSS Animations
-Backend   →  Next.js API Routes · TypeScript
-Fonts     →  Inter · Space Grotesk · JetBrains Mono
-```
+1. **Create Feature Branch**
+   ```bash
+   git checkout -b feature/feature-name
+   ```
+
+2. **Develop & Test**
+   ```bash
+   # Backend
+   cd backend && pytest
+   
+   # Frontend
+   cd frontend && npm test
+   ```
+
+3. **Code Quality**
+   ```bash
+   # Backend
+   black . && flake8 . && mypy .
+   
+   # Frontend
+   npm run lint && npm run format
+   ```
+
+4. **Commit & Push**
+   ```bash
+   git commit -m "feat: description"
+   git push origin feature/feature-name
+   ```
+
+5. **Create Pull Request**
+
+---
+
+## 🔒 Security
+
+- ✅ Password hashing (bcrypt)
+- ✅ JWT authentication
+- ✅ CORS protection
+- ✅ Input validation (Pydantic)
+- ✅ SQL injection prevention
+- ✅ Rate limiting
+- ✅ Environment-based secrets
+
+---
+
+## 📊 Project Stats
+
+- **Models**: 4 comprehensive SQLAlchemy models
+- **API Endpoints**: 15+ fully documented endpoints
+- **Components**: 8 React components
+- **Services**: 6 backend services
+- **ML Modules**: 3 machine learning models
+- **API Keys**: Support for 10+ external APIs
+- **Languages**: Python, TypeScript, JavaScript
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please see [CONTRIBUTING.md](docs/CONTRIBUTING.md) for guidelines.
+
+---
+
+## 📄 License
+
+MIT License - see LICENSE file for details
+
+---
+
+## 📧 Contact & Support
+
+- Documentation: See `docs/` folder
+- Issues: Create GitHub issue
+- Email: support@realstem.edu
+
+---
+
+## 🎓 Educational Philosophy
+
+RealSTEM is built on the principle that students learn best when:
+- **Real**: Connected to current events and real-world impact
+- **Adaptive**: Personalized to their learning level and pace
+- **Collaborative**: Learning with peers globally
+- **Career-Focused**: Understanding practical applications
+- **Engaging**: Using multimedia and interactive tools
+
+---
+
+**Last Updated**: April 20, 2026  
+**Version**: 1.0.0  
+**Status**: Active Development
+
 
 ---
 
