@@ -13,14 +13,18 @@ import {
   ArrowRight,
   Star,
   Users,
-  Timer
+  Timer,
+  Scale
 } from 'lucide-react';
 import { Lesson } from '../types/lesson';
+import VideoPlayer from './VideoPlayer';
+import Simulation from './Simulation';
+import DebateArena from './DebateArena';
 
 // --- Types ---
 
 type AcademicLevel = 'elementary' | 'middle' | 'high' | 'advanced' | 'college';
-type TabId = 'video' | 'simulation' | 'learn' | 'projects' | 'challenge' | 'careers';
+type TabId = 'video' | 'simulation' | 'debate' | 'learn' | 'projects' | 'challenge' | 'careers';
 
 interface LessonViewerProps {
   lesson: Lesson;
@@ -39,9 +43,8 @@ const ProgressBar: React.FC<{ progress: number }> = ({ progress }) => (
 
 const LessonViewer: React.FC<LessonViewerProps> = ({ lesson }) => {
   const [activeLevel, setActiveLevel] = useState<AcademicLevel>('high');
-  const [activeTab, setActiveTab] = useState<TabId>('learn');
+  const [activeTab, setActiveTab] = useState<TabId>('video');
   const [completedSections, setCompletedSections] = useState<Set<string>>(new Set());
-  const [rating, setRating] = useState<number>(0);
   const [timeSpent, setTimeSpent] = useState(0);
 
   // Timer logic
@@ -67,11 +70,54 @@ const LessonViewer: React.FC<LessonViewerProps> = ({ lesson }) => {
   const tabs: { id: TabId; label: string; icon: React.ReactNode }[] = [
     { id: 'video', label: 'Video', icon: <Play size={18} /> },
     { id: 'simulation', label: 'Simulation', icon: <Gamepad2 size={18} /> },
+    { id: 'debate', label: 'Arena', icon: <Scale size={18} /> },
     { id: 'learn', label: 'Learn', icon: <BookOpen size={18} /> },
     { id: 'projects', label: 'Projects', icon: <Pickaxe size={18} /> },
     { id: 'challenge', label: 'Challenge', icon: <Trophy size={18} /> },
     { id: 'careers', label: 'Careers', icon: <Briefcase size={18} /> },
   ];
+
+  // Mock data for new components
+  const mockTranscript = [
+    { id: 1, startTime: 0, endTime: 12, text: "Introduction to atmospheric pressure and its role in modern climate engineering." },
+    { id: 2, startTime: 13, endTime: 25, text: "Wait, isn't that just a fancy way of saying cloud seeding? Not quite, let's look at the chemistry." },
+    { id: 3, startTime: 26, endTime: 45, text: "By injecting silver iodide into sub-zero clouds, we accelerate the formation of ice crystals." }
+  ];
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'video':
+        return (
+          <div className="bg-white rounded-3xl p-2 h-full min-h-[600px]">
+            <VideoPlayer 
+              videoUrl="https://example.com/mock-video.mp4" 
+              transcript={mockTranscript}
+              onComplete={() => setCompletedSections(prev => new Set(prev).add('video'))}
+            />
+          </div>
+        );
+      case 'debate':
+        return <DebateArena topic={lesson.title} lessonId={lesson.id} />;
+      case 'simulation':
+        return (
+          <div className="bg-white rounded-3xl p-4 border border-slate-200 h-[700px]">
+            <Simulation 
+              simulationUrl="https://example-sim.com/pathway"
+              parameters={[{ name: 'Inflow', min: 0, max: 100, unit: 'L/s', defaultValue: 50 }]}
+              onComplete={() => setCompletedSections(prev => new Set(prev).add('simulation'))}
+            />
+          </div>
+        );
+      default:
+        return (
+          <div className="bg-white rounded-3xl p-12 border border-slate-200 flex flex-col items-center justify-center text-center">
+            <BookOpen size={48} className="text-slate-300 mb-4" />
+            <h3 className="text-xl font-bold text-slate-900 mb-2">Content Loading</h3>
+            <p className="text-slate-500 max-w-sm">This module is currently being optimized for the {activeLevel} level. Please check back shortly.</p>
+          </div>
+        );
+    }
+  };
 
   const progress = (completedSections.size / tabs.length) * 100;
 
