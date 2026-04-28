@@ -58,14 +58,36 @@ RealSTEM is a comprehensive educational platform that bridges the gap between cu
 - **React 18 + TypeScript** - Modern, type-safe UI framework
 - **Vite Build Tool** - Lightning-fast development and production builds
 - **Components** (8 core components):
-  - NewsFeed - STEM news aggregation
-  - LessonViewer - Adaptive lesson display
-  - VideoPlayer - Educational video playback
-  - Simulation - Interactive simulations
-  - DebateArena - Global collaboration
-  - CareerExplorer - Career path exploration
-  - ImpactDashboard - Progress metrics
-  - GlobalCollaboration - Real-time collaboration
+  - **NewsFeed** - STEM news aggregation with topic filtering
+  - **LessonViewer** - Adaptive lesson display with 5-tier difficulty levels
+  - **VideoPlayer** - Custom bespoke video player with:
+    - Interactive transcript sync (click to jump to timestamp)
+    - Real-time transcript line highlighting
+    - Custom HUD with volume, progress, and playback controls
+    - Study notes export functionality
+  - **Simulation** - Interactive STEM labs with adjustable parameters
+  - **DebateArena** - Real-time AI-moderated debate with:
+    - Multi-phase workflow (Recruiting → Research → Debate → Results)
+    - PRO/CON team formations
+    - AI Fact-checking module with verification badges
+    - Live audience and timer HUD
+    - Moderator logic scoring (Logic/Evidence/Fallacies)
+  - **CareerExplorer** - Career pathway discovery with:
+    - Salary comparisons (regional data charts)
+    - Educational journey timelines (HS → College → Career)
+    - Success stories from similar profiles
+    - "Day in the Life" video streams
+    - Career simulation labs
+    - AI Mentor chatbot trained on professional interviews
+  - **ImpactDashboard** - Student achievement showcase with:
+    - Summary metrics (Lessons, Countries, Challenges, Concepts)
+    - Skills radar chart (Critical Thinking, Problem Solving, Collaboration, etc.)
+    - Real-world impact timeline with proof links and photos
+    - Global network (mentors & peer connections)
+    - Badges & achievements gallery
+    - Projects portfolio with expandable details
+    - Social sharing and PDF export functionality
+  - **GlobalCollaboration** - Real-time collaboration tools
 
 ### ✅ State Management & Services
 - **Zustand Stores** - User, Lesson, Notification state
@@ -184,7 +206,9 @@ RealSTEM/
 │   │   ├── types/                           # TypeScript Interfaces
 │   │   │   ├── lesson.ts                    # Lesson type
 │   │   │   ├── news.ts                      # News type
-│   │   │   └── user.ts                      # User type
+│   │   │   ├── user.ts                      # User type
+│   │   │   ├── career.ts                    # Career pathways & education
+│   │   │   └── impact.ts                    # Student impact & achievements
 │   │   │
 │   │   └── utils/                           # Utility Functions
 │   │       ├── formatters.ts                # Date/time/currency formatting
