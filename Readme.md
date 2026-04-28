@@ -179,14 +179,14 @@ RealSTEM/
 │   │   ├── index.tsx                        # React entry point
 │   │   │
 │   │   ├── components/                      # React Components
-│   │   │   ├── NewsFeed.tsx                 # STEM news feed
-│   │   │   ├── LessonViewer.tsx             # Lesson display
-│   │   │   ├── VideoPlayer.tsx              # Video playback
-│   │   │   ├── Simulation.tsx               # Interactive simulation
-│   │   │   ├── DebateArena.tsx              # Debate collaboration
-│   │   │   ├── CareerExplorer.tsx           # Career paths
-│   │   │   ├── ImpactDashboard.tsx          # Progress dashboard
-│   │   │   └── GlobalCollaboration.tsx      # Real-time collaboration
+│   │   │   ├── NewsFeed.tsx                 # STEM news aggregation & filtering
+│   │   │   ├── LessonViewer.tsx             # Adaptive lesson display (5-tier levels)
+│   │   │   ├── VideoPlayer.tsx              # Transcript-sync player with custom HUD
+│   │   │   ├── Simulation.tsx               # Interactive STEM labs
+│   │   │   ├── DebateArena.tsx              # AI-moderated debate with fact-checking
+│   │   │   ├── CareerExplorer.tsx           # Career pathways & AI mentor
+│   │   │   ├── ImpactDashboard.tsx          # Student achievements & portfolio
+│   │   │   └── GlobalCollaboration.tsx      # Real-time collaboration tools
 │   │   │
 │   │   ├── services/                        # API & External Services
 │   │   │   ├── api.ts                       # Axios REST client
