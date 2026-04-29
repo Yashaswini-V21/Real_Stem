@@ -87,7 +87,17 @@ RealSTEM is a comprehensive educational platform that bridges the gap between cu
     - Badges & achievements gallery
     - Projects portfolio with expandable details
     - Social sharing and PDF export functionality
-  - **GlobalCollaboration** - Real-time collaboration tools
+  - **GlobalCollaboration** - Global team collaboration platform with:
+    - Challenge overview with participating countries visualization
+    - Team formation (create/join teams with regional filtering)
+    - Team workspace with member directory and status indicators
+    - Real-time discussion board with chat and message translation
+    - Project milestone tracking with progress indicators
+    - Shared submission portal (project files, videos, reports)
+    - Expert judging phase with scoring and feedback
+    - Live leaderboard with country/region filtering
+    - Video conferencing integration (schedule & join meetings)
+    - Multi-language support with auto-translation toggle
 
 ### ✅ State Management & Services
 - **Zustand Stores** - User, Lesson, Notification state
@@ -186,7 +196,7 @@ RealSTEM/
 │   │   │   ├── DebateArena.tsx              # AI-moderated debate with fact-checking
 │   │   │   ├── CareerExplorer.tsx           # Career pathways & AI mentor
 │   │   │   ├── ImpactDashboard.tsx          # Student achievements & portfolio
-│   │   │   └── GlobalCollaboration.tsx      # Real-time collaboration tools
+│   │   │   └── GlobalCollaboration.tsx      # Global team challenges & collaboration
 │   │   │
 │   │   ├── services/                        # API & External Services
 │   │   │   ├── api.ts                       # Axios REST client
@@ -208,7 +218,8 @@ RealSTEM/
 │   │   │   ├── news.ts                      # News type
 │   │   │   ├── user.ts                      # User type
 │   │   │   ├── career.ts                    # Career pathways & education
-│   │   │   └── impact.ts                    # Student impact & achievements
+│   │   │   ├── impact.ts                    # Student impact & achievements
+│   │   │   └── collaboration.ts             # Team challenges & global collab
 │   │   │
 │   │   └── utils/                           # Utility Functions
 │   │       ├── formatters.ts                # Date/time/currency formatting
