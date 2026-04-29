@@ -12,6 +12,7 @@ import {
   CheckCircle,
   Clock
 } from 'lucide-react';
+import { formatTime } from '../utils/formatters';
 
 // --- Types ---
 
@@ -90,12 +91,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoUrl, transcript, onCompl
       videoRef.current.currentTime = time;
       setProgress(val);
     }
-  };
-
-  const formatTime = (time: number) => {
-    const m = Math.floor(time / 60);
-    const s = Math.floor(time % 60);
-    return `${m}:${s.toString().padStart(2, '0')}`;
   };
 
   const toggleFullscreen = () => {

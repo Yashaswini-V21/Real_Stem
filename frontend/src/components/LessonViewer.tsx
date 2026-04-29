@@ -16,6 +16,7 @@ import {
   Timer,
   Scale
 } from 'lucide-react';
+import { formatTime } from '../utils/formatters';
 import { Lesson } from '../types/lesson';
 import VideoPlayer from './VideoPlayer';
 import Simulation from './Simulation';
@@ -52,12 +53,6 @@ const LessonViewer: React.FC<LessonViewerProps> = ({ lesson }) => {
     const timer = setInterval(() => setTimeSpent(prev => prev + 1), 1000);
     return () => clearInterval(timer);
   }, []);
-
-  const formatTime = (seconds: number) => {
-    const mins = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
-  };
 
   const levels: { id: AcademicLevel; label: string }[] = [
     { id: 'elementary', label: 'Elementary' },

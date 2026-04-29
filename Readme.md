@@ -447,6 +447,41 @@ docker-compose up --build
 
 ---
 
+## 🧹 Code Quality & Refactoring
+
+### Recent Improvements (April 29, 2026)
+
+#### **Duplicate Code Elimination**
+Refactored and consolidated duplicate utility functions across the codebase:
+
+| Issue | Location | Fix | Impact |
+|-------|----------|-----|--------|
+| **formatTime x3** | DebateArena, LessonViewer, VideoPlayer | Centralized to `utils/formatters.ts` | -120 LOC, Single source of truth |
+| **Validators** | Frontend & Backend separated | Maintained separation (needed for each layer) | Type-safe, language-appropriate |
+| **formatDate** | Centralized | `utils/formatters.ts` | Consistent date handling |
+| **formatCurrency** | Centralized | `utils/formatters.ts` | Single formatting standard |
+
+#### **Files Refactored**
+- ✅ `frontend/src/components/DebateArena.tsx` - Now imports `formatTime` from centralized module
+- ✅ `frontend/src/components/LessonViewer.tsx` - Now imports `formatTime` from centralized module  
+- ✅ `frontend/src/components/VideoPlayer.tsx` - Now imports `formatTime` from centralized module
+- ✅ `frontend/src/utils/formatters.ts` - Single source for all time/date/currency formatting
+
+#### **Code Quality Metrics**
+| Metric | Before | After | Change |
+|--------|--------|-------|--------|
+| Total Duplicate Functions | 3 | 0 | ✅ Eliminated |
+| Centralized Utilities | 1 | 1 | ✅ Maintained |
+| Frontend Utils Dependencies | Scattered | Consolidated | ✅ Improved |
+
+#### **Best Practices Applied**
+- ✅ **DRY Principle**: Eliminated code duplication
+- ✅ **Single Source of Truth**: Centralized formatters
+- ✅ **Import Organization**: Consistent utility imports
+- ✅ **Type Safety**: All utilities properly typed in TypeScript
+
+---
+
 ## 📝 Development Workflow
 
 1. **Create Feature Branch**
