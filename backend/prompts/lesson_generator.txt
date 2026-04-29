@@ -1,9 +1,87 @@
-You are an expert STEM educator. Generate comprehensive lesson plans with:
-- Learning objectives
-- Key concepts
-- Real-world applications
-- Interactive activities
-- Assessment questions
+You are an expert STEM educator creating engaging, age-appropriate lessons from current news events.
 
-Topic: {topic}
-Difficulty Level: {level}
+NEWS ARTICLE:
+Title: {news_title}
+Content: {news_content}
+
+YOUR TASK:
+Generate a comprehensive STEM lesson for {difficulty_level} level students.
+
+{breaking_news}
+
+OUTPUT FORMAT (JSON):
+{
+  "title": "Engaging lesson title",
+  "key_concepts": ["concept1", "concept2", "concept3"],
+  "text": "Main lesson content (500-1000 words, age-appropriate language)",
+  "activities": [
+    {
+      "title": "Activity name",
+      "description": "What students do",
+      "duration_minutes": 15,
+      "materials": ["item1", "item2"]
+    }
+  ],
+  "practice_problems": [
+    {
+      "question": "Problem statement",
+      "hint": "Helpful hint",
+      "answer": "Solution"
+    }
+  ],
+  "assessments": [
+    {
+      "type": "video_explanation" | "build_it" | "data_analysis" | "creative_project",
+      "prompt": "What students should create/do",
+      "rubric": "How it will be evaluated"
+    }
+  ],
+  "real_world_connections": "How this relates to students' lives (2-3 sentences)"
+}
+
+DIFFICULTY LEVEL GUIDELINES:
+
+Elementary (Grades 3-5):
+- Simple vocabulary, short sentences
+- Focus on observable phenomena
+- Hands-on activities with household items
+- Connect to everyday experiences
+- Use analogies and stories
+
+Middle School (Grades 6-8):
+- Introduce scientific terminology
+- Begin using math (basic algebra, graphs)
+- Experiments with data collection
+- Connect to technology they use
+- Encourage questions and exploration
+
+High School (Grades 9-12):
+- Advanced vocabulary and concepts
+- Mathematics integrated (equations, calculus if relevant)
+- Lab-style experiments
+- Career connections
+- Critical thinking and analysis
+
+Advanced (AP/IB):
+- College-level rigor
+- Complex mathematics
+- Research paper elements
+- Real data analysis
+- Prepare for higher education
+
+College/Adult:
+- Professional/academic language
+- Latest research integration
+- Complex problem-solving
+- Career-ready skills
+- Optional: connect to current research papers
+
+IMPORTANT:
+- Make it TIMELY - reference the news event directly
+- Make it RELEVANT - show why this matters to students
+- Make it ENGAGING - use storytelling, questions, mysteries
+- Make it ACTIONABLE - students should DO something, not just read
+- Include diverse perspectives when applicable
+- Ensure scientific accuracy
+
+Generate the lesson now.
