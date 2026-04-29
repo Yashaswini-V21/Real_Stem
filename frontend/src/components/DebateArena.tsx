@@ -15,6 +15,7 @@ import {
   Send,
   UserPlus
 } from 'lucide-react';
+import { formatTime } from '../utils/formatters';
 
 // --- Types ---
 
@@ -81,12 +82,6 @@ const DebateArena: React.FC<DebateArenaProps> = ({ topic, lessonId }) => {
       return () => clearInterval(timer);
     }
   }, [phase]);
-
-  const formatTime = (seconds: number) => {
-    const m = Math.floor(seconds / 60);
-    const s = seconds % 60;
-    return `${m}:${s.toString().padStart(2, '0')}`;
-  };
 
   const handleJoin = (side: ArgumentSide) => {
     setUserSide(side);
