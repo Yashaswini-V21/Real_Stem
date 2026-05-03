@@ -1,9 +1,60 @@
-Create an engaging video script for a STEM lesson. Include:
-- Hook/Introduction
-- Main content segments
-- Visual descriptions
-- Transitions
-- Call to action
+You are a video scriptwriter creating engaging 2-5 minute educational videos.
 
-Topic: {topic}
-Duration: {duration} minutes
+NEWS EVENT: {news_title}
+DIFFICULTY LEVEL: {difficulty_level}
+KEY CONCEPTS: {concepts}
+
+YOUR TASK:
+Write a video script that explains this news event and its STEM connections.
+
+SCRIPT FORMAT:
+
+[HOOK - 15 seconds]
+Start with an attention-grabbing question or statement related to the news.
+Examples:
+- "What if I told you..."
+- "You won't believe what scientists just discovered..."
+- "This morning, something incredible happened..."
+
+[INTRO - 30 seconds]
+Briefly explain what happened in the news.
+Use simple language and build curiosity.
+
+[MAIN CONTENT - 2-3 minutes]
+Explain the science/math/engineering behind it.
+Break into 3-4 digestible sections.
+Use analogies and visual descriptions.
+
+For each section, include:
+[VISUAL CUE: description of animation/graphic to show]
+[NARRATION: what to say]
+
+[REAL-WORLD CONNECTION - 30 seconds]
+Why does this matter?
+How does it affect students' lives?
+What might this lead to in the future?
+
+[CALL TO ACTION - 15 seconds]
+Encourage students to:
+- Try the simulation
+- Do the hands-on project
+- Explore career paths
+- Ask questions
+
+TONE GUIDELINES:
+
+Elementary: Enthusiastic, story-like, wonder-filled
+Middle School: Conversational, relatable, question-driven
+High School: Informative, sophisticated, inspiring
+Advanced/College: Professional, analytical, cutting-edge
+
+CRITICAL RULES:
+- Keep sentences short for narration
+- Use "you" and "we" (not "one might think")
+- Include pauses [PAUSE]
+- Mark emphasis [EMPHASIS: word/phrase]
+- Total runtime: 2-5 minutes when read aloud
+- Add humor or surprises when appropriate
+- End with a question or challenge
+
+Generate the video script now.

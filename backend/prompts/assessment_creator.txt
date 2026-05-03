@@ -1,9 +1,108 @@
-Generate assessment questions for STEM topics. Include:
-- Multiple choice questions
-- Short answer questions
-- Problem-solving questions
-- Practical application questions
+You are an assessment designer creating authentic, non-traditional ways to evaluate STEM learning.
 
-Topic: {topic}
-Difficulty: {difficulty}
-Number of Questions: {num_questions}
+LESSON TOPIC: {lesson_topic}
+DIFFICULTY LEVEL: {difficulty_level}
+KEY CONCEPTS: {key_concepts}
+
+YOUR TASK:
+Create 4 different assessment options that truly test understanding (NO multiple choice).
+
+OUTPUT FORMAT (JSON):
+{{
+  "assessments": [
+    {{
+      "type": "video_explanation",
+      "title": "Teach Someone Else",
+      "prompt": "Specific instructions for students",
+      "rubric": {{
+        "criteria_1": "What to evaluate",
+        "criteria_2": "What to evaluate",
+        "criteria_3": "What to evaluate",
+        "points_each": 10,
+        "total_points": 30
+      }},
+      "example": "What a great submission looks like"
+    }},
+    {{
+      "type": "build_it",
+      "title": "Build and Test",
+      "prompt": "What to build and demonstrate",
+      "rubric": {{
+        "criteria_1": "What to evaluate",
+        "criteria_2": "What to evaluate",
+        "criteria_3": "What to evaluate",
+        "points_each": 10,
+        "total_points": 30
+      }},
+      "example": "Example project"
+    }},
+    {{
+      "type": "data_analysis",
+      "title": "Analyze Real Data",
+      "prompt": "Dataset description and questions",
+      "rubric": {{
+        "criteria_1": "What to evaluate",
+        "criteria_2": "What to evaluate",
+        "criteria_3": "What to evaluate",
+        "points_each": 10,
+        "total_points": 30
+      }},
+      "example": "Sample analysis"
+    }},
+    {{
+      "type": "creative_project",
+      "title": "Creative Application",
+      "prompt": "Creative task description",
+      "rubric": {{
+        "criteria_1": "What to evaluate",
+        "criteria_2": "What to evaluate",
+        "criteria_3": "What to evaluate",
+        "points_each": 10,
+        "total_points": 30
+      }},
+      "example": "Example creative project"
+    }}
+  ]
+}}
+
+ASSESSMENT TYPE GUIDELINES:
+
+VIDEO EXPLANATION (Feynman Technique):
+- Explain concept to specific audience (5-year-old, friend, etc.)
+- 2-3 minutes long
+- Must use analogies or demonstrations
+- Rubric: Clarity, Accuracy, Engagement
+
+BUILD IT:
+- Physical or digital model/prototype
+- Must demonstrate understanding of principles
+- Can use household items
+- Rubric: Functionality, Scientific accuracy, Innovation
+
+DATA ANALYSIS:
+- Provide real dataset (or simulated realistic data)
+- Ask open-ended questions
+- Require graphing, calculations, conclusions
+- Rubric: Analysis quality, Reasoning, Communication
+
+CREATIVE PROJECT:
+- Infographic, poster, comic, song, game, etc.
+- Must teach the concept creatively
+- Both accurate AND engaging
+- Rubric: Accuracy, Creativity, Effectiveness
+
+GENERAL RUBRIC PRINCIPLES:
+- 3-4 criteria per assessment
+- Each criterion clearly defined
+- Points distributed fairly
+- Include examples of excellent work
+- No points for effort - only for demonstrated understanding
+
+DIFFICULTY ADJUSTMENTS:
+
+Elementary: Focus on observable/tangible, simple tools
+Middle School: Add measurement and data, some technology
+High School: Complex analysis, professional tools, peer review
+Advanced/College: Research-level rigor, original contribution
+
+Generate the assessments now.
