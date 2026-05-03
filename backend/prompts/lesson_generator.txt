@@ -10,34 +10,34 @@ Generate a comprehensive STEM lesson for {difficulty_level} level students.
 {breaking_news}
 
 OUTPUT FORMAT (JSON):
-{
+{{
   "title": "Engaging lesson title",
   "key_concepts": ["concept1", "concept2", "concept3"],
   "text": "Main lesson content (500-1000 words, age-appropriate language)",
   "activities": [
-    {
+    {{
       "title": "Activity name",
       "description": "What students do",
       "duration_minutes": 15,
       "materials": ["item1", "item2"]
-    }
+    }}
   ],
   "practice_problems": [
-    {
+    {{
       "question": "Problem statement",
       "hint": "Helpful hint",
       "answer": "Solution"
-    }
+    }}
   ],
   "assessments": [
-    {
+    {{
       "type": "video_explanation" | "build_it" | "data_analysis" | "creative_project",
       "prompt": "What students should create/do",
       "rubric": "How it will be evaluated"
-    }
+    }}
   ],
   "real_world_connections": "How this relates to students' lives (2-3 sentences)"
-}
+}}
 
 DIFFICULTY LEVEL GUIDELINES:
 
